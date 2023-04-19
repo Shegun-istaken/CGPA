@@ -1,0 +1,318 @@
+:root {
+  --sky-blue: #8ecae6ff;
+  --blue-green: #219ebcff;
+  --prussian-blue: #023047ff;
+  --selective-yellow: #ffb703ff;
+  --ut-orange: #fb8500ff;
+  --timberwolf: #e3dbdbff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--timberwolf);
+}
+
+input:focus{
+    outline: 0;
+}
+
+small{
+    opacity: 0.6;
+}
+
+main{
+  width: 80%;
+  margin: 32px auto 48px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  justify-content: center;
+}
+
+main.home p {
+  font-size: 12px;
+}
+
+button.fullButton {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  background-color: var(--prussian-blue);
+  color: white;
+  transition: 0.1s ease-in-out;
+  font-weight: 800px;
+  font-size: 20px;
+}
+
+button.fullButton:hover, button.fullButton:focus{
+    opacity: 0.9;
+}
+
+button.submit{
+    background-color: var(--selective-yellow);
+    color: black;
+}
+
+/* main.dataPage{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+} */
+
+div.dataPageHeader{
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+div.dataPageHeader button.fullButton{
+    font-size: 16px;
+}
+
+div.resultButtons{
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+div.courseView{
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    justify-content: center;
+}
+
+div.courseView button.add{
+    background-color: hsla(32, 100%, 49%, 0.1);
+    align-self: center;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 16px;
+    margin: 16px 0px;
+    color: var(--ut-orange);
+    padding: 16px;
+    border-radius: 8px;
+    width: 100%;
+    transition: 0.2s ease-in-out;
+}
+
+div.courseView button.add:hover{
+    background-color: hsla(32, 100%, 49%, 0.2);
+}
+
+button.add img{
+    width: 48px;
+    filter: invert(58%) sepia(36%) saturate(3670%) hue-rotate(1deg) brightness(99%) contrast(100%);
+}
+
+div.course{
+    background-color: var(--sky-blue);
+    padding: 16px 0px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+div.course button{
+    width: 50%;
+    padding: 8px;
+    border: 0;
+    background-color: var(--timberwolf);
+    transition: 0.1s ease-in-out;
+}
+
+div.course button:hover{
+    background-color: rgb(205, 205, 205);
+}
+
+div.course input{
+    text-align: center;
+    padding: 8px;
+    border-radius: 4px;
+    border: 0;
+}
+
+div.course label{
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+div.modalContainer{
+    background-color: hsla(0, 13%, 87%, 0.5);
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+div.modal{
+    position: fixed;
+    z-index: 2;
+    background-color: white;
+    width: 80%;
+    top: 48px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 8px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 24px;
+    padding: 16px 4px 32px 4px;
+    overflow-y: scroll;
+}
+
+div.modal button.exit{
+    background-color: var(--prussian-blue);
+    border: none;
+    border-radius: 8px;
+}
+
+button.exit img{
+    width: 40px;
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(1deg) brightness(109%) contrast(112%);
+}
+
+button.return{
+    background-color: transparent;
+    border: none;
+    color: var(--ut-orange);
+    font-size: 16px;
+}
+
+p.title{
+    font-weight: 700;
+}
+
+div.results{
+    background-color: hsla(199, 64%, 73%, 0.2);
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    height: 280px;
+    width: 80%;
+    border-radius: 8px;
+    padding: 16px 0px;
+    overflow: auto;
+}
+
+div.resultContainer{
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+div.successful{
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+div.return{
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+div.modal h2{
+    font-size: 24px;
+    color: var(--prussian-blue);
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 480px){
+    main.home p{
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 720px){
+    button.fullButton{
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    div.courseView{
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        gap:16px;
+    }
+
+    div.course{
+        width: 48%;
+    }
+
+    div.courseView button.add{
+        width: auto;
+        margin: 16px 48px;
+        font-size: 20px;
+    }
+
+    button.add img{
+        width: 72px;
+    }
+
+    div.resultContainer{
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    div.resultDetails{
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    button.fullButton{
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    div.course{
+        width: 32%;
+    }
+
+    div.resultContainer{
+        padding: 0px 32px;
+    }
+
+    div.resultDetails{
+        width: 16%;
+    }
+}
+
+
