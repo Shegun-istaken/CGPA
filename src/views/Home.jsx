@@ -7,7 +7,7 @@ const Home = function () {
       <p>
         This site only processes University of Ibadan's 4 point grading system
       </p>
-      <Link to={'scores'} ><button className="fullButton">Get Started</button></Link>
+      <Link to={'/scores'} ><button className="fullButton">Get Started</button></Link>
     </main>
   );
 };
