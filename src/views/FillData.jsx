@@ -6,16 +6,16 @@ import Result from "../components/Result";
 
 export default function FillData() {
   const [data, setData] = useState([]);
-  const [result, setResult] = useState(false)
-  const [isOpen, setIsOpen] = useState(false)
+  const [result, setResult] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  function handleReset(){
-    setData([])
+  function handleReset() {
+    setData([]);
   }
 
   function addCourse() {
-    setData([...data, { id: data.length, title: "", score: 0, unit: 0 }]);
-    console.log(data)
+    setData([...data, { id: data.length, title: "", score: 0, unit: 1 }]);
+    console.log(data);
   }
 
   function handleTitleChange(event, id) {
@@ -43,16 +43,14 @@ export default function FillData() {
   }
 
   function handleUnitChange(event, id) {
-    if (event.target.value >= 0 && event.target.value <= 4) {
-      setData(
-        data.map((item) => {
-          if (item.id == id) {
-            return { ...item, unit: event.target.value };
-          }
-          return item;
-        })
-      );
-    }
+    setData(
+      data.map((item) => {
+        if (item.id == id) {
+          return { ...item, unit: event.target.value };
+        }
+        return item;
+      })
+    );
   }
 
   function handleDelete(event, id) {
@@ -60,25 +58,23 @@ export default function FillData() {
   }
 
   function handleSubmit() {
-    setIsOpen(true)
-
-    const checkEmptyUnit = data.filter((item) => !item.unit);
-    if (checkEmptyUnit?.length < 1) {
-      setResult((cgpa(data)));
-    } else {
-      setResult(false)
-    }
+    setIsOpen(true);
+    setResult(cgpa(data));
   }
 
-  function handleModalExit(){
-    setIsOpen(false)
+  function handleModalExit() {
+    setIsOpen(false);
   }
 
   return (
     <main className="dataPage">
       <div className="dataPageHeader">
-      <h1>Fill in your results here</h1>
-      { data.length > 0 && <button className="fullButton" onClick={handleReset}>Reset Data</button>}
+        <h1>Fill in your results here</h1>
+        {data.length > 0 && (
+          <button className="fullButton" onClick={handleReset}>
+            Reset Data
+          </button>
+        )}
       </div>
       {data.length < 1 && (
         <button onClick={addCourse} className="fullButton">
@@ -113,7 +109,9 @@ export default function FillData() {
           </button>
         </div>
       )}
-      {isOpen && <Result data={data} result={result} onClickExit={handleModalExit} />}
+      {isOpen && (
+        <Result data={data} result={result} onClickExit={handleModalExit} />
+      )}
     </main>
   );
 }

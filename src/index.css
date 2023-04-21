@@ -157,6 +157,10 @@ div.course input{
     border: 0;
 }
 
+div.course input[type^="range"]{
+    padding: 0;
+}
+
 div.course label{
     font-weight: 500;
     display: flex;

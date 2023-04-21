@@ -28,12 +28,12 @@ export default function Course({
       </label>
 
       <label>
-        <p>Course Unit ( 0 - 4)</p>
+        <p>Course Unit: {unit} {unit == 1 ? "unit" : "units"}</p>
         <input
           onChange={onUnitChange}
-          type="number"
-          min="0"
-          max="4"
+          type="range"
+          min="1"
+          max="6"
           value={unit}
         />
       </label>
